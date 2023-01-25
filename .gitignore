@@ -1,0 +1,5 @@
+.DS_Store
+.idea/
+__pycache__
+00_unsorted/tmp.py
+todo.txt
