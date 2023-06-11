@@ -1,7 +1,15 @@
 #!/bin/bash
+#                       <
+#                     < <
+# DOESN'T WORK !!!! < < <
+#                     < <
+#                       <
+#
+# use python3 task.py https://leetcode.com/problems/__nane_of_the_problem__
+#
 
 # example
-# ./task_by_link.sh https://leetcode.com/problems/subarray-sums-divisible-by-k/
+# ./_old_task_by_link.sh https://leetcode.com/problems/subarray-sums-divisible-by-k/
 
 # target        - url_to_leetcode with 'description/'
 # data          - a tmp variable contains a response_received_by_curl

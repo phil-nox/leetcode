@@ -1,17 +1,18 @@
+# _link
+# _git_commit
 import time
 
 
-class Solution:
-    pass
+# _class_Solution:
 
 
 if __name__ == '__main__':
     tests = [
-        ('test_00', ([0, 1], 20), 2),
+        ('test_00', (__test_args__), 2),
     ]
 
     foo = Solution()
-    method2test = Solution.__name_of_the_method__
+# _method2test = Solution.
 
     time_diff = -time.perf_counter()
     for name, inpt, outpt in tests:
