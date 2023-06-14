@@ -42,21 +42,25 @@ class Solution:
 # InOrder traversal     # https://t.ly/h--Q
 class Solution:
     def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
-        rlt, prev = 100001, -100001         # int,              int             # 0 <= Node.val <= 105
-        stack, seen = [root], set()         # list[TreeNode],   set[TreeNode]
+        rlt, prev = float('inf'), float('-inf')     # int,              int
+        stack, forward = [root], True               # list[TreeNode],   bool
         while stack:
             cur: TreeNode = stack.pop()
-            # forward walk
-            if id(cur) not in seen:
-                seen.add(id(cur))
-                stack.extend((cur.right,) if cur.right else ())                 # inOrder_walk
-                stack.append(cur)                                               # inOrder_walk
-                stack.extend((cur.left,) if cur.left else ())                   # inOrder_walk
+            # dead_end case
+            if cur is None:
+                forward = False
                 continue
-            # backward walk
+
+            # forward_walk
+            if forward:
+                stack.extend((cur.right, cur, cur.left))    # inOrder traversal
+                continue
+
+            # backward_walk
             diff = cur.val - prev
             rlt = diff if diff < rlt else rlt
             prev = cur.val
+            forward = True
         return rlt
         
 
