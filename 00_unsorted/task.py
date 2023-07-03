@@ -44,7 +44,7 @@ def f01_data_for_request(task_name: str) -> dict[str, Any]:
         },
         'json': {
             'query': '''
-                        query questionContent($titleSlug: String!)
+                        query questionEditorData($titleSlug: String!)
                         {
                             question(titleSlug: $titleSlug)
                             {
